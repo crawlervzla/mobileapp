@@ -25,9 +25,13 @@ npm run dev
 
 `npm run typecheck` revisa TypeScript. `npm run build` genera `dist/`.
 
+## Publicación
+
+Cada push a `main` construye el sitio y lo publica en GitHub Pages: https://crawlervzla.github.io/mobileapp/
+
 ## Esta entrega
 
-El formulario de tres pasos valida en el navegador y conserva lo escrito. Todavía no envía ni guarda la solicitud: falta la API, Supabase y la política de privacidad definitiva.
+El formulario de tres pasos valida en el navegador y conserva lo escrito. Todavía no envía ni guarda la solicitud: falta la API, PostgreSQL y la política de privacidad definitiva.
 
 Los logos de clientes se tomaron de sus sitios públicos:
 

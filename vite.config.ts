@@ -19,7 +19,10 @@ function htmlPartials(): Plugin {
   };
 }
 
+const base = process.env.VITE_BASE ?? "/";
+
 export default defineConfig({
+  base,
   appType: "mpa",
   plugins: [htmlPartials()],
   build: {

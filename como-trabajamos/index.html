@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Entendemos el contexto, definimos prioridades y construimos una solución con espacio para seguir creciendo.">
+  <meta name="description" content="Qué hace cada tecnología en un proyecto: PostgreSQL guarda los datos, Node.js responde las solicitudes, TypeScript escribe el sistema, Vite publica la aplicación y GitHub conserva el historial.">
   <title>Cómo trabajamos | Mobileapp Business Development</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,13 +46,57 @@
         </div>
       </div>
     </section>
+    <section class="stack-base" id="base" aria-labelledby="base-title">
+      <div class="container">
+        <span class="eyebrow">La base de cada proyecto</span>
+        <h2 class="section-heading" id="base-title" style="margin-top:18px">Para qué sirve cada pieza de un proyecto.</h2>
+        <p class="section-copy">Son las herramientas con las que se desarrolla el proyecto de un cliente. Cada una cumple una función: guardar los datos, responder las solicitudes, escribir el sistema, publicarlo o conservar el historial.</p>
+        <div class="tech-grid">
+          <article class="tech-card tech-card-lead" id="postgresql">
+            <p class="tech-kicker">PostgreSQL · Los datos del proyecto</p>
+            <h3>Guarda la información y define quién puede usarla.</h3>
+            <p class="tech-body">PostgreSQL es el motor de base de datos del proyecto. Ahí queda la información del negocio: clientes, pedidos, usuarios o lo que la operación necesite. Organiza esos datos y confirma cada operación completa. Si el proceso se interrumpe, la información queda como estaba antes de esa operación. También define quién puede ver o modificar cada parte, incluso registro por registro. Si hace falta, la información se puede recuperar hasta un momento anterior.</p>
+            <a class="tech-source" href="https://www.postgresql.org/about/" rel="noopener noreferrer">Fuente: postgresql.org</a>
+          </article>
+          <article class="tech-card" id="nodejs">
+            <p class="tech-kicker">Node.js · El servidor del proyecto</p>
+            <h3>Recibe cada solicitud y devuelve una respuesta.</h3>
+            <p class="tech-body">Node.js es el entorno donde corre el servidor del proyecto. Cuando alguien inicia sesión, envía un formulario o consulta un dato, esa petición llega aquí, se procesa y recibe una respuesta. Está hecho para atender muchas solicitudes al mismo tiempo, con poca espera.</p>
+            <a class="tech-source" href="https://nodejs.org/en/about" rel="noopener noreferrer">Fuente: nodejs.org</a>
+          </article>
+          <article class="tech-card" id="typescript">
+            <p class="tech-kicker">TypeScript · Cómo se escribe el proyecto</p>
+            <h3>Marca un dato incorrecto antes de que alguien use el sistema.</h3>
+            <p class="tech-body">TypeScript es el lenguaje con el que se escribe el proyecto. Parte de JavaScript y agrega reglas sobre qué dato corresponde en cada parte. Si una función espera un número y recibe un texto, el error aparece al construir el sistema, antes de que una persona lo encuentre al usarlo. El resultado funciona en el navegador y en el servidor.</p>
+            <a class="tech-source" href="https://www.typescriptlang.org/" rel="noopener noreferrer">Fuente: typescriptlang.org</a>
+          </article>
+          <article class="tech-card" id="vite">
+            <p class="tech-kicker">Vite · Cómo se publica la aplicación</p>
+            <h3>Deja la aplicación lista para abrir en el navegador.</h3>
+            <p class="tech-body">Vite prepara la parte web del proyecto para publicarla. Arma los archivos que la persona abre en el teléfono o en el computador, optimizados para los navegadores de uso habitual. Sirve para el sitio, el panel o la herramienta que el proyecto incluye.</p>
+            <a class="tech-source" href="https://vite.dev/guide/" rel="noopener noreferrer">Fuente: vite.dev</a>
+          </article>
+          <article class="tech-card" id="github">
+            <p class="tech-kicker">GitHub · El historial del proyecto</p>
+            <h3>Conserva el proyecto y cada cambio que se le hace.</h3>
+            <p class="tech-body">GitHub guarda los archivos del proyecto y el historial de cada modificación. Cualquier persona del equipo puede consultarlo desde otro equipo: se ve qué cambió y se puede volver a una versión anterior. Quienes construyen el proyecto trabajan sobre esa misma copia, y cada aporte queda registrado.</p>
+            <a class="tech-source" href="https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories" rel="noopener noreferrer">Fuente: docs.github.com</a>
+          </article>
+          <article class="tech-card" id="inteligencia-artificial">
+            <p class="tech-kicker">Inteligencia artificial · Una función del proyecto</p>
+            <h3>Cumple una tarea concreta cuando el proyecto la necesita.</h3>
+            <p class="tech-body">En un proyecto, la inteligencia artificial cumple una función definida: clasificar, redactar, resumir o responder, según lo que el negocio pida. El proveedor se informa en cada caso, junto con qué datos recibe. Las decisiones del negocio siguen en manos de las personas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
     <section class="cta-band" aria-labelledby="method-cta">
       <div class="container cta-inner">
         <div>
           <h2 id="method-cta">Cuéntanos en qué estás trabajando.</h2>
           <p>No necesitas llegar con todo resuelto. Con el contexto de hoy podemos identificar un siguiente paso posible.</p>
         </div>
-        <a class="button" href="/contacto/">Conversemos</a>
+        <a class="button" href="%BASE_URL%contacto/">Conversemos</a>
       </div>
     </section>
   </main>
