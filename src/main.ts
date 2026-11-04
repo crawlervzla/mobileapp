@@ -1,3 +1,5 @@
+import { parseLead } from "./lead";
+
 const page = document.body.dataset.page ?? "";
 
 document.querySelectorAll<HTMLAnchorElement>("#main-nav a[data-nav]").forEach((link) => {
@@ -39,7 +41,7 @@ function initLeadForm(leadForm: HTMLFormElement): void {
   const servicesError = requiredElement<HTMLElement>("#services-error");
   const servicesGroup = requiredElement<HTMLElement>("#services-group");
   const formStatus = requiredElement<HTMLElement>("#form-status");
-  const labels = ["Tu negocio", "Tu desafío", "Tu proyecto"];
+  const labels = ["Tu consulta", "Tu oportunidad", "Siguiente etapa"];
   let currentStep = 0;
 
   function showStep(index: number, moveFocus = false): void {
@@ -98,7 +100,7 @@ function initLeadForm(leadForm: HTMLFormElement): void {
     }
   });
 
-  leadForm.addEventListener("submit", (event) => {
+  leadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     for (let index = 0; index < panels.length; index += 1) {
       if (!validateStep(index)) {
@@ -107,15 +109,66 @@ function initLeadForm(leadForm: HTMLFormElement): void {
       }
     }
 
-    const honeypot = leadForm.querySelector<HTMLInputElement>(".hp-input");
-    if (honeypot && honeypot.value.trim() !== "") return;
+    const payload = leadPayload(leadForm);
+    if (String(payload.companyWebsite ?? "").trim() !== "") return;
 
-    formStatus.hidden = false;
-    formStatus.textContent = "Revisamos los datos en esta página, pero esta entrega todavía no envía ni guarda la solicitud. Lo que escribiste sigue en el formulario.";
-    formStatus.focus();
+    const parsed = parseLead(payload);
+    if (!parsed.ok) {
+      showStatus(parsed.message, true);
+      return;
+    }
+
+    submitButton.disabled = true;
+    backButton.disabled = true;
+    showStatus("Enviando la solicitud…", false);
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const body = (await response.json().catch(() => null)) as { ok?: boolean; message?: string } | null;
+      if (!response.ok || body?.ok !== true) {
+        showStatus(body?.message ?? "No pudimos guardar la solicitud. Lo que escribiste sigue en el formulario.", true);
+        return;
+      }
+      showStatus("Recibimos tu solicitud. Te escribiremos al correo que indicaste.", false);
+    } catch {
+      showStatus("No pudimos enviar la solicitud. Revisa tu conexión. Lo que escribiste sigue en el formulario.", true);
+    } finally {
+      submitButton.disabled = false;
+      backButton.disabled = false;
+    }
   });
 
+  function showStatus(message: string, isError: boolean): void {
+    formStatus.hidden = false;
+    formStatus.textContent = message;
+    formStatus.classList.toggle("is-error", isError);
+    formStatus.focus();
+  }
+
   showStep(0);
+}
+
+function leadPayload(leadForm: HTMLFormElement): Record<string, unknown> {
+  const data = new FormData(leadForm);
+  return {
+    fullName: String(data.get("fullName") ?? ""),
+    email: String(data.get("email") ?? ""),
+    phone: String(data.get("phone") ?? ""),
+    location: String(data.get("location") ?? ""),
+    businessName: String(data.get("businessName") ?? ""),
+    businessStage: String(data.get("businessStage") ?? ""),
+    industry: String(data.get("industry") ?? ""),
+    services: data.getAll("services").map(String),
+    challenge: String(data.get("challenge") ?? ""),
+    startupCapital: String(data.get("startupCapital") ?? ""),
+    projectBudget: String(data.get("projectBudget") ?? ""),
+    timeline: String(data.get("timeline") ?? ""),
+    consent: data.get("consent") === "on",
+    companyWebsite: String(data.get("companyWebsite") ?? ""),
+  };
 }
 
 function requiredElement<T extends Element>(selector: string): T {

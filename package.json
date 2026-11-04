@@ -6,10 +6,15 @@
     "dev": "vite",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
+    "test": "node --experimental-strip-types --test tests/lead.test.ts",
     "preview": "vite preview"
   },
   "devDependencies": {
     "typescript": "^5.6.3",
     "vite": "^6.0.7"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "zod": "^3.25.76"
   }
 }

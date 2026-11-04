@@ -2,8 +2,12 @@ node_modules
 dist
 .tools
 assets-extract
+.work/
+.manus/
 .env
 .env.*
 !.env.example
 *.log
 .DS_Store
+
+.vercel
