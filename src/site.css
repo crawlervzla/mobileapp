@@ -517,7 +517,17 @@ a.tech-card:hover { border-color: #b9d4ff; box-shadow: 0 14px 36px rgba(33, 37, 
 /* Mobileapp preoperational portfolio pages */
 .opportunity-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .opportunity-card-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.opportunity-card .proof-kicker { margin: 0; }
+.opportunity-card .proof-kicker { margin: 14px 0 0; }
+.model-logo { display: block; height: 44px; width: auto; max-width: 200px; background: none; object-fit: contain; }
+.model-site {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  color: var(--brand-blue) !important;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.model-site::after { content: " ↗"; }
 .opportunity-status { display: inline-flex; align-items: center; width: fit-content; padding: 7px 10px; border-radius: 999px; background: #fff3cd; color: #664d03; font-size: 10px; font-weight: 800; letter-spacing: .04em; }
 .opportunity-status-line { color: var(--muted) !important; font-size: 12px !important; font-weight: 700; }
 .opportunity-link-row { margin-top: 26px; }
