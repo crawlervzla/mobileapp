@@ -595,3 +595,12 @@ a.tech-card:hover { border-color: #b9d4ff; box-shadow: 0 14px 36px rgba(33, 37, 
 .form-disabled-notice p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
 .form-disabled-notice p + p { margin-top: 12px; }
 .form-body > .field-help a { color: var(--brand-blue); text-decoration: underline; }
+
+/* Titulares principales más compactos para dar protagonismo a la propuesta. */
+.hero h1 { font-size: clamp(36px, 4.8vw, 60px); line-height: 1.04; }
+.opportunity-hero h1 { font-size: clamp(36px, 4.4vw, 56px); }
+
+@media (max-width: 680px) {
+  .hero h1 { font-size: clamp(34px, 9vw, 46px); line-height: 1.05; }
+  .opportunity-hero h1 { font-size: clamp(34px, 8vw, 44px); }
+}
