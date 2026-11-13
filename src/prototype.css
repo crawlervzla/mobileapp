@@ -218,17 +218,19 @@
       .contact-grid { grid-template-columns: .65fr 1.35fr; gap: 18px; }
       .contact-aside { padding: 21px; }
     }
-    @media (max-width: 680px) {
-      html { scroll-padding-top: 75px; }
-      .container { width: min(100% - 36px, 520px); }
-      .nav-wrap { min-height: 68px; }
-      .brand { min-width: auto; }
-      .menu-toggle { display: grid; place-items: center; }
+    @media (max-width: 1100px) {
+      .nav-wrap { position: relative; min-height: 68px; }
+      .brand { min-width: auto; flex: 1 1 auto; }
+      .menu-toggle { display: grid; place-items: center; flex: 0 0 auto; }
       .menu-toggle svg { width: 20px; height: 20px; }
-      .nav-links { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 10px 18px 19px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links { position: absolute; top: calc(100% + 1px); right: 0; left: 0; z-index: 40; display: none; align-items: stretch; gap: 0; padding: 10px 18px 19px; border-bottom: 1px solid var(--line); background: var(--paper); }
       .nav-links.open { display: flex; flex-direction: column; }
       .nav-links > a:not(.button) { padding: 13px 5px; border-bottom: 1px solid var(--line); }
       .nav-links .button { margin-top: 14px; }
+    }
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 75px; }
+      .container { width: min(100% - 36px, 520px); }
       .hero { padding: 43px 0 56px; }
       .hero-grid { grid-template-columns: 1fr; gap: 30px; }
       .hero h1 { max-width: 550px; font-size: clamp(47px, 13vw, 66px); }
