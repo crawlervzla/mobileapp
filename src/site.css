@@ -281,7 +281,7 @@ html { scroll-padding-top: 88px; }
 
 .hero-photo img { object-position: 68% center; }
 
-.hero .flow-card { background: #212529; }
+.hero .flow-card { background: #084298; }
 
 .hero .photo-caption { right: 230px; }
 
@@ -463,8 +463,8 @@ a.tech-card:hover { border-color: #b9d4ff; box-shadow: 0 14px 36px rgba(33, 37, 
 
 .tech-card-lead {
   grid-column: 1 / -1;
-  background: #212529;
-  border-color: #212529;
+  background: #084298;
+  border-color: #084298;
   color: #ffffff;
 }
 
