@@ -606,16 +606,7 @@ a.tech-card:hover { border-color: #b9d4ff; box-shadow: 0 14px 36px rgba(33, 37, 
 .form-disabled-notice p + p { margin-top: 12px; }
 .form-body > .field-help a { color: var(--brand-blue); text-decoration: underline; }
 
-/* Portada de la edición: masthead y ficha breve de cada nota. */
-.issue-mast {
-  margin: 0 0 18px;
-  color: rgba(255, 255, 255, .78);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-
+/* Ficha breve de cada nota de portada. */
 .story-facts {
   display: grid;
   gap: 0;
