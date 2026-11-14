@@ -113,7 +113,7 @@
     .approach-step .num { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid #cad7c9; border-radius: 50%; color: var(--green); font-size: 11px; font-weight: 700; }
     .approach-step h3 { margin: 1px 0 5px; font-family: var(--font-display); font-size: 15px; letter-spacing: -.03em; }
     .approach-step p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
-    .system-visual { position: relative; overflow: hidden; min-height: 410px; padding: 27px; border-radius: var(--radius-lg); background: var(--ink); color: white; }
+    .system-visual { position: relative; overflow: hidden; min-height: 410px; padding: 27px; border-radius: var(--radius-lg); background: #084298; color: white; }
     .system-visual::before { position: absolute; right: -130px; bottom: -170px; width: 410px; height: 410px; border: 1px solid rgba(199,238,114,.19); border-radius: 50%; content: ""; }
     .system-visual::after { position: absolute; right: -65px; bottom: -105px; width: 280px; height: 280px; border: 1px solid rgba(199,238,114,.14); border-radius: 50%; content: ""; }
     .visual-topline { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 10px; color: #aab8b0; font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
