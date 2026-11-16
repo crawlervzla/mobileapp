@@ -287,14 +287,44 @@ html { scroll-padding-top: 88px; }
 
 .caption-break { display: none; }
 
+.hero .eyebrow {
+  max-width: 34rem;
+  flex-wrap: wrap;
+  letter-spacing: .08em;
+}
+
+.hero-lede a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .hero .float-card {
+  width: 228px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
+.hero-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 12px;
+}
+
+.hero-brands a {
+  color: #084298;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-brands a:hover { text-decoration: underline; }
+
 @media (max-width: 680px) {
   .hero { padding-bottom: 64px; }
   .hero-photo { bottom: 34px; }
+  .hero .float-card { width: 196px; }
   .hero .flow-card { bottom: 0; }
   .hero .flow-card span { white-space: nowrap; }
   .hero .photo-caption { right: 16px; bottom: 40px; left: 22px; }
